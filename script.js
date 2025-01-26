@@ -1,4 +1,4 @@
-const todolist = () => {
+const addTask= () => {
     const taskInput = document.getElementById("taskInput");
     const taskText = taskInput.value.trim();
     if (taskText !=="") {
@@ -12,6 +12,12 @@ const todolist = () => {
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
         deleteButton.onclick = () => removeTask(li);
+        li.appendChild(span);
+        li.appendChild(editButton);
+        li.appendChild(deleteButton);
+        todolist.appendChild(li);
+        taskInput.value = "";
+        
 } else {
     alert("Please add a task");
 }
